@@ -2,24 +2,23 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
 const Container= styled.div`
-width:${(props) => props.type !== "sm" && "230px"};
-margin-bottom:${(props) => props.type === "sm" ? "10px":"45px"};
-margin:20px;
+width:${(props) => props.type === "sm" ? "370px":"230px"};
+padding-bottom:${(props) => props.type === "sm" ? "10px":"0px"};
+margin: ${(props) => props.type === "sm" ? "0px":"20px"};
 display: ${(props) => props.type === "sm" && "flex"};
 
 
 `;
 
 const Image = styled.img`
-height: ${(props) => props.type === "sm" ? "120px":"155px"};
+height: ${(props) => props.type === "sm" ? "110px":"155px"};
 width:${(props) => props.type === "sm" ? "180px":"245px"};
 `;
 
 const Details = styled.div`
 display: flex;
 margin-top:${(props) => props.type !== "sm" && "10px"};
-
-
+float: ${(props) => props.type === "sm" && "right"};
 `;
 
 const ChannelImage = styled.img`
@@ -36,7 +35,6 @@ padding-left:10px;
 over-flow-hidden;
 text-overflow: ellipsis; 
 flex-wrap:wrap;
-width:230px;
 
 `;
 
@@ -49,30 +47,36 @@ white-space:wrap;
 font-weight: 500;
 letter-spacing:0.1px;
 color:white;
+margin-bottom:5px;
 `;
 
 const ChannelName = styled.p`
-font-size: ${(props) => props.type === "sm" ? "12px":"14px"};
-color: #aaaaaa !important;`;
+font-size: "14px";
+color: #aaaaaa !important;
+line-height: ${(props) => props.type === "sm" && "20px"};
+`;
+
 
 const Info = styled.p`
-font-size: ${(props) => props.type === "sm" ? "12px":"14px"};
+font-size: 14px;
 color: #aaaaaa !important;
+
 `;
 
 const Card = ({type}) => {
   return (
      <Container type={type}>
         <Link to='/video/test' style={{textDecoration:'none'}}>
+          <div>
         <Image type={type} src='https://besthqwallpapers.com/Uploads/4-11-2021/180260/thumb2-netflix-red-logo-4k-red-brickwall-netflix-logo-brands.jpg'     alt='Video'/>
         <Details type={type}>
         <ChannelImage type={type}/>
-        <Texts>
-          <Title>New Video</Title>
-          <ChannelName>Joe Winter</ChannelName>
-          <Info>660,908 vistas • hace 2 dias</Info>
+        <Texts >
+          <Title >New Video</Title>
+          <ChannelName type={type}>Joe Winter</ChannelName>
+          <Info >660,908 vistas • hace 2 dias</Info>
         </Texts>
-      </Details>
+      </Details></div>
       </Link>
     </Container>
   )

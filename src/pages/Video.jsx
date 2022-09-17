@@ -16,7 +16,10 @@ margin-left:20px;
   
 `;
 
-const Recommendation = styled.div`flex:2.2; `;
+const Recommendation = styled.div`
+flex:2.3; 
+padding-left: 22px
+`;
 const VideoWrapper = styled.div`
 
 `;
@@ -81,7 +84,7 @@ color:white;
  height:max-content;
  padding:10px 16px;
  cursor:pointer;
- font-weight:700;
+ font-weight:500;
  letter-spacing: 0.5px;
 
 `;
