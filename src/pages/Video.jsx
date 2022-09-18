@@ -53,7 +53,7 @@ gap:20px;
 
 const Hr = styled.hr`
 border : 1px solid #383838;
-margin:18px 0px;
+margin:16px 0px;
 `;
 
 const Channel = styled.div`
